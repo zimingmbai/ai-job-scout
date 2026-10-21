@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="AI and innovation job posts in Singapore, collected each morning by a scheduled agent.">
+<title>AI and Innovation Job Scout</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300505C'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23F7F3EE'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Playfair+Display:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+:root {
+  --smu-red: #C41230;
+  --smu-teal: #00505C;
+  --page: #F7F3EE;
+  --sheet: #ffffff;
+  --ink: #1a1a2e;
+  --muted: #5b6470;
+  --hl: #ffe76a;
+  --hl-ink: #1a1a2e;
+  --card: #fcfaf6;
+  --line: #e6dfd4;
+  --line-strong: #bfb4a4;
+  --teal-wash: #e5eff0;
+  --grid: #f1ece4;
+  --band: #efe8dc;
+  --mark: #00505C;
+  --focus: #00505C;
+  --tip-bg: #1a1a2e;
+  --tip-ink: #ffffff;
+  --pressed-ink: #ffffff;
+  --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --sans: 'Source Sans 3', 'Source Sans Pro', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --smu-red: #ff7586;
+    --smu-teal: #72c6cf;
+    --page: #121117;
+    --sheet: #1b1a21;
+    --ink: #ece7df;
+    --muted: #a9b0ba;
+    --card: #211f27;
+    --line: #33303a;
+    --line-strong: #57525f;
+    --teal-wash: #173136;
+    --grid: #26242c;
+    --band: #2b2932;
+    --mark: #72c6cf;
+    --focus: #9adbe2;
+    --tip-bg: #ece7df;
+    --tip-ink: #1a1a2e;
+    --pressed-ink: #0f1a1c;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font: 400 17px/1.55 var(--sans);
+  overflow-wrap: break-word;
+}
+a { color: var(--smu-teal); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.vh {
+  position: absolute !important; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.sample-banner {
+  margin: 0;
+  padding: 10px 16px;
+  background: var(--hl);
+  color: var(--hl-ink);
+  text-align: center;
+  font-weight: 700;
+  border-bottom: 1px solid #d9c13a;
+}
+.sample-banner a { color: var(--hl-ink); font-weight: 600; margin-left: 10px; }
+
+.wrap { max-width: 1212px; margin: 0 auto; padding: 28px 16px 48px; }
+.sheet { background: var(--sheet); border: 1px solid var(--line); padding: 36px 40px 28px; }
+
+.masthead { padding-bottom: 20px; border-bottom: 2px solid var(--smu-red); margin-bottom: 28px; }
+.smallcaps {
+  font-variant-caps: all-small-caps;
+  letter-spacing: .06em;
+  color: var(--smu-teal);
+  font-weight: 600;
+}
+.kicker { margin: 0 0 6px; font-size: 1.05rem; }
+h1 {
+  font: 700 clamp(2.1rem, 5.4vw, 3.5rem)/1.04 var(--serif);
+  letter-spacing: -.01em;
+  margin: 0 0 10px;
+}
+.focus { margin: 0 0 18px; font-size: 1.15rem; color: var(--muted); max-width: 62ch; }
+.meta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+.meta { display: flex; flex-wrap: wrap; gap: 4px 22px; margin: 0; padding: 0; list-style: none; font-size: 1.05rem; }
+.watch { display: inline-flex; align-items: center; gap: 9px; }
+.pulse {
+  position: relative; display: inline-block; width: 10px; height: 10px; border-radius: 50%;
+  color: var(--smu-teal); background: currentColor;
+}
+.pulse::after {
+  content: ""; position: absolute; inset: -5px; border-radius: 50%;
+  border: 2px solid currentColor; opacity: 0;
+  animation: ring 2.4s ease-out infinite;
+}
+@keyframes ring { 0% { transform: scale(.4); opacity: .85; } 100% { transform: scale(1.5); opacity: 0; } }
+.watch.overdue .pulse { color: var(--smu-red); background: transparent; border: 2px solid currentColor; }
+.watch.overdue .pulse::after { animation: none; }
+.watch.overdue { color: var(--smu-red); }
+.overdue-note { margin: 10px 0 0; color: var(--smu-red); font-weight: 600; }
+.tools { margin-left: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+.checked { font: 400 12.5px var(--mono); color: var(--muted); }
+.btn {
+  font: 600 15px/1 var(--sans);
+  color: var(--smu-teal);
+  background: transparent;
+  border: 1px solid var(--smu-teal);
+  border-radius: 4px;
+  padding: 10px 16px;
+  min-height: 38px;
+  cursor: pointer;
+}
+.btn:hover { background: var(--teal-wash); }
+.btn[aria-disabled="true"] { opacity: .65; cursor: progress; }
+
+.notice {
+  margin: 0 0 32px;
+  padding: 18px 22px;
+  background: var(--teal-wash);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--smu-teal);
+}
+.notice h2 { font: 700 1.4rem/1.2 var(--serif); margin: 0 0 6px; }
+.notice p { margin: 6px 0; max-width: 72ch; }
+.notice.error { background: var(--card); border-left-color: var(--smu-red); }
+.notice code, .error-text {
+  font: 400 13.5px var(--mono);
+  overflow-wrap: anywhere;
+}
+.error-text { display: block; margin-top: 4px; padding: 8px 10px; background: var(--sheet); border: 1px solid var(--line); }
+.loading { margin: 0 0 32px; color: var(--muted); font-style: italic; }
+
+.stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  margin: 0 0 40px;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.stat { margin: 0; padding: 16px 18px 14px; border-left: 1px solid var(--line); }
+.stat:first-child { border-left: 0; padding-left: 0; }
+.stat-num { display: block; font: 700 2.7rem/1.05 var(--serif); font-variant-numeric: lining-nums tabular-nums; }
+.stat-label { display: block; font-size: 1.02rem; margin-top: 4px; }
+
+.section { margin: 0 0 44px; }
+.section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 18px; margin-bottom: 10px; }
+h2 { font: 700 1.8rem/1.15 var(--serif); margin: 0; }
+.dek { margin: 6px 0 0; color: var(--muted); max-width: 70ch; }
+
+.chart-wrap { position: relative; margin: 18px 0 8px; }
+#chart { min-height: 40px; }
+#chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart-empty { margin: 0; padding: 26px 0; color: var(--muted); font-style: italic; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.lane-label { font: 600 12px var(--sans); letter-spacing: .08em; text-transform: uppercase; fill: var(--smu-teal); }
+.axis-label { font: 400 11px var(--mono); fill: var(--muted); }
+.val-label { font: 500 11.5px var(--mono); fill: var(--ink); }
+.gridline { stroke: var(--grid); stroke-width: 1; }
+.baseline { stroke: var(--line-strong); stroke-width: 1; }
+.ring { fill: var(--sheet); }
+.dot { fill: var(--mark); }
+.dot.hollow { fill: var(--sheet); stroke: var(--mark); stroke-width: 2; }
+.bar { fill: var(--mark); }
+.tline { fill: none; stroke: var(--mark); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.tdot { fill: var(--mark); stroke: var(--sheet); stroke-width: 2; }
+.band { fill: var(--band); visibility: hidden; }
+.hit { fill: transparent; pointer-events: all; }
+.hit:focus { outline: none; }
+.hit:focus-visible { stroke: var(--focus); stroke-width: 2; }
+.tip {
+  position: absolute; z-index: 5; top: 0; left: 0;
+  width: max-content; max-width: min(270px, 100%);
+  padding: 10px 12px 11px;
+  background: var(--tip-bg); color: var(--tip-ink);
+  border-radius: 6px;
+  font-size: 14px; line-height: 1.4;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+}
+.tip strong { display: block; font: 500 12.5px var(--mono); margin-bottom: 5px; }
+.tip-row { display: flex; justify-content: space-between; gap: 18px; font: 400 12.5px/1.55 var(--mono); }
+.tip-note { display: block; margin-top: 6px; font-style: italic; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 6px 0 0; padding: 0; list-style: none; font-size: 14px; color: var(--muted); }
+.legend li { display: inline-flex; align-items: center; gap: 7px; }
+.legend svg { flex: none; }
+
+details.log { margin-top: 22px; border-top: 1px solid var(--line); padding-top: 12px; }
+details.log summary { cursor: pointer; font-weight: 600; color: var(--smu-teal); width: max-content; max-width: 100%; }
+.table-wrap { overflow-x: auto; margin-top: 12px; }
+table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 15px; }
+th {
+  text-align: left; vertical-align: bottom; white-space: nowrap;
+  font-weight: 600; font-variant-caps: all-small-caps; letter-spacing: .05em; color: var(--smu-teal);
+  border-bottom: 1px solid var(--line-strong); padding: 6px 14px 6px 0;
+}
+td { border-bottom: 1px solid var(--line); padding: 9px 14px 9px 0; vertical-align: top; }
+td.when { font: 400 13px var(--mono); white-space: nowrap; }
+td.num, th.num { text-align: right; }
+td.num { font: 400 13px var(--mono); }
+.checked-list { list-style: none; margin: 0; padding: 0; font: 400 12px/1.6 var(--mono); color: var(--muted); }
+
+.filters {
+  display: grid; gap: 12px;
+  padding: 16px 0 18px; margin: 0 0 18px;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.fgroup { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.flabel { min-width: 64px; font-size: 1.02rem; }
+.chips { display: contents; }
+.chip {
+  font: 600 14px/1.1 var(--sans);
+  color: var(--ink);
+  background: var(--sheet);
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  padding: 7px 13px;
+  min-height: 34px;
+  cursor: pointer;
+}
+.chip:hover { border-color: var(--smu-teal); }
+.chip[aria-pressed="true"] { background: var(--smu-teal); border-color: var(--smu-teal); color: var(--pressed-ink); }
+.chip[aria-pressed="true"]::before { content: "\2713"; margin-right: 6px; }
+.frow { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 26px; }
+.field { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.field input[type="search"], .field select {
+  font: 400 16px var(--sans);
+  color: var(--ink);
+  background: var(--sheet);
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  padding: 7px 10px;
+  min-height: 38px;
+}
+.field input[type="search"] { width: min(300px, 100%); }
+.toggle { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-weight: 600; }
+.toggle input { width: 18px; height: 18px; margin: 0; accent-color: var(--smu-teal); }
+.count { margin: 0; font: 400 13px var(--mono); color: var(--muted); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(290px, 100%), 1fr)); gap: 18px; }
+.job {
+  display: flex; flex-direction: column; gap: 6px; min-width: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--smu-teal);
+  padding: 16px 18px 14px;
+}
+.job h3 { font: 700 1.2rem/1.28 var(--serif); margin: 2px 0 0; overflow-wrap: anywhere; }
+.job h3 a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.job h3 a:hover { color: var(--smu-teal); text-decoration-color: var(--smu-teal); }
+.badge-new {
+  align-self: flex-start;
+  background: var(--hl); color: var(--hl-ink);
+  font: 700 12px/1 var(--sans); letter-spacing: .12em;
+  padding: 5px 8px 4px; border-radius: 2px;
+}
+.company { margin: 0; font-weight: 600; }
+.where { margin: 0; color: var(--muted); font-size: 15px; }
+.salary { margin: 0; font: 400 13px var(--mono); }
+.nolink { margin: 0; font-size: 13.5px; color: var(--muted); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 4px 0 0; padding: 0; }
+.tag { font-size: 12.5px; line-height: 1; padding: 5px 8px; border: 1px solid var(--line-strong); border-radius: 3px; background: var(--sheet); }
+.tag-src { border-color: var(--smu-teal); color: var(--smu-teal); font-weight: 600; }
+.why { margin: 4px 0 0; font-style: italic; color: var(--muted); font-size: 15px; }
+.seen { margin: auto 0 0; padding-top: 9px; border-top: 1px dashed var(--line); font: 400 12px var(--mono); color: var(--muted); }
+.job.arrive { animation: arrive .7s ease-out both; }
+@keyframes arrive { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.no-match { margin: 6px 0 0; padding: 18px 0; color: var(--muted); }
+.no-match .btn { margin-left: 10px; }
+
+.card-list { display: grid; grid-template-columns: 160px 1fr; margin: 14px 0 0; border-top: 1px solid var(--line); }
+.card-list dt, .card-list dd { margin: 0; padding: 11px 0; border-bottom: 1px solid var(--line); }
+.card-list dt { font-size: 1.05rem; padding-right: 16px; }
+.card-list dd.unset { color: var(--muted); font-style: italic; }
+
+.foot { margin-top: 12px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14.5px; }
+.foot p { margin: 4px 0; }
+.foot .updated { font: 400 12.5px var(--mono); }
+
+.toast {
+  position: fixed; left: 50%; bottom: 22px; z-index: 20;
+  transform: translate(-50%, 24px); opacity: 0;
+  transition: opacity .25s ease, transform .25s ease;
+  max-width: calc(100% - 32px); width: max-content;
+  padding: 12px 18px;
+  background: var(--tip-bg); color: var(--tip-ink);
+  border-radius: 6px; font-weight: 600;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .22);
+  pointer-events: none;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+@media (max-width: 760px) {
+  .tools { margin-left: 0; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stat:nth-child(3) { border-left: 0; padding-left: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+@media (max-width: 640px) {
+  .wrap { padding: 0; }
+  .sheet { border: 0; padding: 24px 16px 26px; }
+  .stat { padding: 12px 12px 10px; }
+  .stat-num { font-size: 2.2rem; }
+  .card-list { grid-template-columns: 1fr; }
+  .card-list dt { border-bottom: 0; padding-bottom: 0; }
+  .card-list dd { padding-top: 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse::after { animation: none; }
+  .job.arrive { animation: none; }
+  .toast { transition: none; }
+}
+</style>
+</head>
+<body>
+<p class="sample-banner" id="sampleBanner" hidden>This page is showing sample data for testing, and none of these job posts is real. <a href="./">Show the real data</a></p>
+<div class="wrap">
+<div class="sheet">
+  <header class="masthead">
+    <p class="kicker smallcaps" id="kicker">Waiting for the first run</p>
+    <h1 id="title">AI and Innovation Job Scout</h1>
+    <p class="focus" id="focus">AI and innovation roles in Singapore for business graduates</p>
+    <div class="meta-row">
+      <ul class="meta smallcaps">
+        <li class="watch" id="watch"><span class="pulse" aria-hidden="true"></span><span id="watchText">Watching</span></li>
+        <li id="lastRun">Last run: not yet</li>
+        <li id="schedule">Schedule: not set</li>
+      </ul>
+      <div class="tools">
+        <span class="checked" id="checked"></span>
+        <button type="button" class="btn" id="checkBtn">Check again</button>
+      </div>
+    </div>
+    <p class="overdue-note" id="overdue" hidden></p>
+  </header>
+
+  <main>
+    <div id="status"><p class="loading">Loading the latest data&hellip;</p></div>
+    <noscript><p class="notice">This page needs JavaScript to show the job list.</p></noscript>
+
+    <div id="dataArea" hidden>
+      <section class="stats" aria-label="Summary">
+        <p class="stat"><span class="stat-num" id="statRoles">0</span> <span class="stat-label smallcaps">Roles tracked</span></p>
+        <p class="stat"><span class="stat-num" id="statNew">0</span> <span class="stat-label smallcaps">New in the last run</span></p>
+        <p class="stat"><span class="stat-num" id="statCompanies">0</span> <span class="stat-label smallcaps">Companies</span></p>
+        <p class="stat"><span class="stat-num" id="statRuns">0</span> <span class="stat-label smallcaps">Runs so far</span></p>
+      </section>
+
+      <section class="section" aria-labelledby="hAsleep">
+        <h2 id="hAsleep">While you were asleep</h2>
+        <p class="dek">Each column is one run of the routine. The top row shows when it ran, the bars show how many new roles it found, and the line shows how many roles the list held afterwards.</p>
+        <div class="chart-wrap">
+          <div id="chart"></div>
+          <div class="tip" id="tip" hidden></div>
+        </div>
+        <ul class="legend" id="legend">
+          <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle class="dot" cx="7" cy="7" r="5"/></svg>Email sent</li>
+          <li><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle class="dot hollow" cx="7" cy="7" r="4.5"/></svg>No email sent</li>
+          <li>A bigger dot means more new roles</li>
+          <li>Point at a run, or press Tab, to see its details</li>
+        </ul>
+        <details class="log" id="log">
+          <summary id="logSummary">Run log</summary>
+          <div class="table-wrap" role="region" aria-label="Run log table" tabindex="0">
+            <table>
+              <thead>
+                <tr><th scope="col">Run (Singapore time)</th><th scope="col">What it checked</th><th scope="col" class="num">Found</th><th scope="col" class="num">New</th><th scope="col">Email</th><th scope="col">Note</th></tr>
+              </thead>
+              <tbody id="logBody"></tbody>
+            </table>
+          </div>
+        </details>
+      </section>
+
+      <section class="section" id="roles" aria-labelledby="hRoles">
+        <div class="section-head">
+          <h2 id="hRoles">Roles</h2>
+          <p class="count" id="count" aria-live="polite"></p>
+        </div>
+        <div class="filters" id="filters">
+          <div class="fgroup" role="group" aria-labelledby="flTrack"><span class="flabel smallcaps" id="flTrack">Track</span><span class="chips" id="chipsTrack"></span></div>
+          <div class="fgroup" role="group" aria-labelledby="flSource"><span class="flabel smallcaps" id="flSource">Source</span><span class="chips" id="chipsSource"></span></div>
+          <div class="fgroup" role="group" aria-labelledby="flLevel"><span class="flabel smallcaps" id="flLevel">Level</span><span class="chips" id="chipsLevel"></span></div>
+          <div class="frow">
+            <label class="field"><span class="flabel smallcaps">Search</span><input type="search" id="q" placeholder="Title or company" autocomplete="off"></label>
+            <label class="toggle"><input type="checkbox" id="newOnly"> New in last run only</label>
+            <label class="field"><span class="flabel smallcaps">Sort</span><select id="sort"><option value="newest">Newest first</option><option value="company">Company A to Z</option></select></label>
+          </div>
+        </div>
+        <div class="grid" id="grid"></div>
+        <div id="noMatch"></div>
+      </section>
+
+      <section class="section" aria-labelledby="hHow">
+        <h2 id="hHow">How this agent works</h2>
+        <dl class="card-list" id="card"></dl>
+      </section>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <p>A Claude routine updates this data on a schedule. Open each post before you act on it.</p>
+    <p class="smallcaps">MGMT 6110 &middot; Week 8 AI in Action Studio</p>
+    <p class="updated" id="updated" hidden></p>
+  </footer>
+</div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script>
+(function () {
+  'use strict';
+
+  var SAMPLE = '_dev/sample_';
+  var REFRESH_MS = 5 * 60 * 1000;
+  var HOUR = 36e5;
+  var TZ = 'Asia/Singapore';
+  var SGT_OFFSET = 8 * HOUR;
+  var TRACKS = ['AI', 'Innovation', 'AI and innovation'];
+  var SOURCES = ['LinkedIn', 'MyCareersFuture', 'Company site', 'Added by hand'];
+  var LEVELS = ['Entry', 'Mid', 'Senior', 'Not stated'];
+  var CARD_ROWS = [['Job', 'job'], ['Trigger', 'trigger'], ['Tools', 'tools'], ['Must never', 'never'], ['Where I check', 'check']];
+  var DEFAULTS = {
+    title: 'AI and Innovation Job Scout',
+    focus: 'AI and innovation roles in Singapore for business graduates',
+    schedule: ''
+  };
+
+  var isSample = new URLSearchParams(location.search).get('data') === SAMPLE;
+  var prefix = isSample ? SAMPLE : 'data/';
+
+  var state = {
+    meta: { title: DEFAULTS.title, focus: DEFAULTS.focus, schedule: '', updated: null, card: {} },
+    jobs: [], runs: [],
+    loaded: false, error: null, busy: false,
+    signature: '', openIds: null, arriving: null, lastChecked: 0,
+    f: { track: 'All', source: 'All', level: 'All', q: '', newOnly: false, sort: 'newest' }
+  };
+  var chartGeo = null;
+
+  function $(id) { return document.getElementById(id); }
+
+  function el(tag, attrs, kids) {
+    var n = document.createElement(tag);
+    if (attrs) {
+      Object.keys(attrs).forEach(function (k) {
+        var v = attrs[k];
+        if (v == null || v === false) return;
+        if (k === 'text') n.textContent = String(v);
+        else if (k === 'class') n.className = v;
+        else n.setAttribute(k, v === true ? '' : String(v));
+      });
+    }
+    (kids || []).forEach(function (c) {
+      if (c == null) return;
+      n.appendChild(typeof c === 'string' ? document.createTextNode(c) : c);
+    });
+    return n;
+  }
+
+  function sv(tag, attrs, text) {
+    var n = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    Object.keys(attrs || {}).forEach(function (k) { n.setAttribute(k, String(attrs[k])); });
+    if (text != null) n.textContent = String(text);
+    return n;
+  }
+
+  function clear(n) { while (n.firstChild) n.removeChild(n.firstChild); }
+  function str(v) { return typeof v === 'string' ? v.trim() : (typeof v === 'number' && isFinite(v) ? String(v) : ''); }
+  function num(v) { return typeof v === 'number' && isFinite(v) ? v : null; }
+  function time(v) { if (typeof v !== 'string' || !v) return null; var t = Date.parse(v); return isNaN(t) ? null : t; }
+  function r1(v) { return Math.round(v * 10) / 10; }
+  function plural(n, one, many) { return n + ' ' + (n === 1 ? one : many); }
+
+  function safeUrl(u) {
+    if (typeof u !== 'string') return null;
+    u = u.trim();
+    if (!/^https?:\/\//i.test(u)) return null;
+    try {
+      var p = new URL(u);
+      return (p.protocol === 'https:' || p.protocol === 'http:') ? p.href : null;
+    } catch (e) { return null; }
+  }
+
+  function debounce(fn, ms) {
+    var t;
+    return function () { clearTimeout(t); t = setTimeout(fn, ms); };
+  }
+
+  var fmtCache = {};
+  function parts(t, opts) {
+    var key = JSON.stringify(opts);
+    if (!fmtCache[key]) fmtCache[key] = new Intl.DateTimeFormat('en-GB', Object.assign({ timeZone: TZ }, opts));
+    var out = {};
+    fmtCache[key].formatToParts(new Date(t)).forEach(function (p) { out[p.type] = p.value; });
+    return out;
+  }
+  function ampm(p) { return (p.dayPeriod || '').toUpperCase(); }
+  function fmtClock(t) {
+    var p = parts(t, { hour: 'numeric', minute: '2-digit', hourCycle: 'h12' });
+    return p.hour + ':' + p.minute + ' ' + ampm(p);
+  }
+  function fmtRun(t) {
+    var p = parts(t, { weekday: 'short', day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit', hourCycle: 'h12' });
+    return p.weekday + ' ' + p.day + ' ' + p.month + ', ' + p.hour + ':' + p.minute + ' ' + ampm(p);
+  }
+  function fmtDate(t, withYear) {
+    var p = parts(t, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' });
+    return p.weekday + ' ' + p.day + ' ' + p.month + (withYear ? ' ' + p.year : '');
+  }
+  function fmtDayMonth(t) { var p = parts(t, { day: 'numeric', month: 'short' }); return p.day + ' ' + p.month; }
+  function fmtHour(t) { var p = parts(t, { hour: 'numeric', hourCycle: 'h12' }); return p.hour + ' ' + ampm(p); }
+  function fmtPosted(s) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s);
+    if (!m) return s;
+    var t = Date.UTC(+m[1], +m[2] - 1, +m[3]);
+    if (isNaN(t)) return s;
+    return new Intl.DateTimeFormat('en-GB', { timeZone: 'UTC', day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(t));
+  }
+
+  function canon(v, list) {
+    var s = str(v);
+    if (!s) return '';
+    var low = s.toLowerCase().replace(/&/g, 'and').replace(/\s+/g, ' ');
+    for (var i = 0; i < list.length; i++) if (list[i].toLowerCase() === low) return list[i];
+    return s;
+  }
+
+  function normJob(j, i) {
+    if (!j || typeof j !== 'object') return null;
+    var title = str(j.title) || 'Untitled role';
+    var company = str(j.company) || 'Company not stated';
+    var track = canon(j.track, TRACKS);
+    if (track.toLowerCase() === 'innovation and ai') track = 'AI and innovation';
+    return {
+      id: str(j.id) || ('row-' + (str(j.url) || title + '|' + company || i)),
+      title: title,
+      company: company,
+      location: str(j.location),
+      source: canon(j.source, SOURCES) || 'Not stated',
+      url: safeUrl(j.url),
+      posted: str(j.posted),
+      salary: str(j.salary),
+      track: track,
+      level: canon(j.level, LEVELS) || 'Not stated',
+      why: str(j.why),
+      first: time(j.first_seen),
+      last: time(j.last_seen)
+    };
+  }
+
+  function normRun(r) {
+    if (!r || typeof r !== 'object') return null;
+    var at = time(r.run_at);
+    if (at == null) return null;
+    return {
+      at: at,
+      checked: Array.isArray(r.checked) ? r.checked : [],
+      found: num(r.found),
+      added: num(r.new),
+      kept: num(r.kept),
+      emailed: r.emailed === true ? true : (r.emailed === false ? false : null),
+      note: str(r.note)
+    };
+  }
+
+  function parseAll(jobsDoc, runsDoc) {
+    var jd = jobsDoc.data, rd = runsDoc.data;
+    var isObj = jd && typeof jd === 'object' && !Array.isArray(jd);
+    var rawJobs = Array.isArray(jd) ? jd : (isObj && Array.isArray(jd.jobs) ? jd.jobs : []);
+    var rawMeta = isObj && jd.meta && typeof jd.meta === 'object' ? jd.meta : {};
+    var rawRuns = Array.isArray(rd) ? rd : (rd && Array.isArray(rd.runs) ? rd.runs : []);
+    var rawCard = rawMeta.card && typeof rawMeta.card === 'object' ? rawMeta.card : {};
+    var meta = {
+      title: str(rawMeta.title) || DEFAULTS.title,
+      focus: str(rawMeta.focus),
+      schedule: str(rawMeta.schedule),
+      updated: time(rawMeta.updated_at),
+      card: {}
+    };
+    CARD_ROWS.forEach(function (row) { meta.card[row[1]] = str(rawCard[row[1]]); });
+    var seen = new Set(), jobs = [];
+    rawJobs.forEach(function (j, i) {
+      var n = normJob(j, i);
+      if (n && !seen.has(n.id)) { seen.add(n.id); jobs.push(n); }
+    });
+    var runs = rawRuns.map(normRun).filter(Boolean).sort(function (a, b) { return a.at - b.at; });
+    return { meta: meta, jobs: jobs, runs: runs, signature: jobsDoc.text + '\n' + runsDoc.text };
+  }
+
+  function nearestRun(t) {
+    if (t == null) return -1;
+    var best = -1, bestD = Infinity;
+    for (var i = 0; i < state.runs.length; i++) {
+      var d = Math.abs(state.runs[i].at - t);
+      if (d < bestD) { bestD = d; best = i; }
+    }
+    return best;
+  }
+
+  function derive() {
+    var runs = state.runs, last = runs.length - 1;
+    var latest = last >= 0 ? runs[last].at : null;
+    var firstCounts = runs.map(function () { return 0; });
+    state.jobs.forEach(function (j) {
+      var fi = nearestRun(j.first);
+      var li = j.last != null ? nearestRun(j.last) : last;
+      j.isNew = latest != null && j.first != null && fi === last && j.first >= latest - 2 * HOUR;
+      j.seenRuns = fi < 0 ? 0 : Math.max(1, li - fi + 1);
+      if (fi >= 0) firstCounts[fi] += 1;
+    });
+    var running = 0;
+    runs.forEach(function (r, i) {
+      running += firstCounts[i];
+      r.newShown = r.added != null ? r.added : firstCounts[i];
+      r.total = r.kept != null ? r.kept : running;
+    });
+  }
+
+  function getJSON(name) {
+    var url = prefix + name;
+    return fetch(url + '?t=' + Date.now(), { cache: 'no-store' }).then(function (res) {
+      if (!res.ok) throw new Error(url + ' returned HTTP ' + res.status + '.');
+      return res.text();
+    }, function (e) {
+      throw new Error('Could not fetch ' + url + ' (' + (e && e.message ? e.message : e) + ').');
+    }).then(function (text) {
+      try { return { text: text, data: JSON.parse(text) }; }
+      catch (e) { throw new Error(url + ' is not valid JSON (' + e.message + ').'); }
+    });
+  }
+
+  function renderMasthead() {
+    var m = state.meta, runs = state.runs, last = runs[runs.length - 1];
+    $('title').textContent = m.title;
+    document.title = m.title + (isSample ? ' (sample data)' : '');
+    $('focus').textContent = m.focus;
+    $('focus').hidden = !m.focus;
+    $('schedule').textContent = 'Schedule: ' + (m.schedule || 'not set');
+    $('kicker').textContent = last ? 'Edition of ' + fmtDate(last.at, true) : 'Waiting for the first run';
+    $('lastRun').textContent = last ? 'Last run: ' + fmtRun(last.at) + ' · ' + last.newShown + ' new' : 'Last run: not yet';
+    var overdue = !isSample && !!last && Date.now() - last.at > 30 * HOUR;
+    $('watch').classList.toggle('overdue', overdue);
+    $('watchText').textContent = overdue ? 'Overdue' : 'Watching';
+    $('overdue').hidden = !overdue;
+    $('overdue').textContent = overdue ? 'The routine has not run in the last 30 hours. Open it in Claude and look at its latest session.' : '';
+    $('updated').hidden = m.updated == null;
+    $('updated').textContent = m.updated != null ? 'Data file updated ' + fmtRun(m.updated) + ', Singapore time' : '';
+  }
+
+  function renderStatus() {
+    var box = $('status');
+    clear(box);
+    if (state.error) {
+      $('dataArea').hidden = true;
+      var kids = [
+        el('h2', { text: 'This page could not load its data' }),
+        el('p', null, [
+          'Open it from its GitHub Pages address, ',
+          el('code', { text: 'https://<your-username>.github.io/<repository>/' }),
+          ', or from a local server. To start one, run ',
+          el('code', { text: 'python3 -m http.server 8000' }),
+          ' in this folder and open ',
+          el('code', { text: 'http://localhost:8000/' }),
+          '.'
+        ])
+      ];
+      if (location.protocol === 'file:') kids.push(el('p', { text: 'You opened the file straight from your computer (a file:// address). Browsers do not let a page read its data files that way.' }));
+      kids.push(el('p', null, ['Error:', el('span', { class: 'error-text', text: state.error.message || String(state.error) })]));
+      box.appendChild(el('div', { class: 'notice error', role: 'alert' }, kids));
+      return;
+    }
+    if (!state.loaded) {
+      box.appendChild(el('p', { class: 'loading', text: 'Loading the latest data…' }));
+      return;
+    }
+    $('dataArea').hidden = false;
+    if (!state.runs.length) {
+      box.appendChild(el('div', { class: 'notice' }, [
+        el('h2', { text: 'Waiting for the first run' }),
+        el('p', { text: 'No runs yet. Open your routine in Claude and press Run now. This page fills in about ten minutes after the run pushes to GitHub.' })
+      ]));
+    }
+  }
+
+  function renderStats() {
+    var runs = state.runs, last = runs[runs.length - 1];
+    var companies = new Set(state.jobs.map(function (j) { return j.company.toLowerCase(); }));
+    $('statRoles').textContent = state.jobs.length;
+    $('statNew').textContent = last ? last.newShown : 0;
+    $('statCompanies').textContent = companies.size;
+    $('statRuns').textContent = runs.length;
+  }
+
+  function makeTicks(d0, d1, maxN) {
+    var steps = [1, 2, 3, 6, 12, 24, 48, 72, 168, 336, 720];
+    var step = steps[steps.length - 1] * HOUR;
+    for (var i = 0; i < steps.length; i++) {
+      if ((d1 - d0) / (steps[i] * HOUR) <= maxN) { step = steps[i] * HOUR; break; }
+    }
+    var out = [];
+    for (var t = Math.ceil((d0 + SGT_OFFSET) / step) * step - SGT_OFFSET; t <= d1; t += step) out.push(t);
+    return { list: out, step: step };
+  }
+
+  function tickLabel(t, step) {
+    var h = new Date(t + SGT_OFFSET).getUTCHours();
+    return (step >= 24 * HOUR || h === 0) ? fmtDayMonth(t) : fmtHour(t);
+  }
+
+  function barPath(x0, x1, top, base) {
+    var r = Math.min(4, (x1 - x0) / 2, base - top);
+    return 'M' + r1(x0) + ',' + r1(base) + 'V' + r1(top + r) +
+      'Q' + r1(x0) + ',' + r1(top) + ' ' + r1(x0 + r) + ',' + r1(top) +
+      'H' + r1(x1 - r) + 'Q' + r1(x1) + ',' + r1(top) + ' ' + r1(x1) + ',' + r1(top + r) +
+      'V' + r1(base) + 'Z';
+  }
+
+  function emailText(v) { return v === true ? 'Yes' : (v === false ? 'No' : 'Not recorded'); }
+
+  function runSummary(r) {
+    return fmtRun(r.at) + '. Found ' + (r.found != null ? r.found : 'not recorded') + '. New ' + r.newShown +
+      '. Roles tracked ' + r.total + '. Email sent: ' + emailText(r.emailed).toLowerCase() + '.' + (r.note ? ' Note: ' + r.note : '');
+  }
+
+  function renderChart() {
+    var host = $('chart');
+    clear(host);
+    hideTip();
+    chartGeo = null;
+    var runs = state.runs, n = runs.length;
+    $('legend').hidden = !n;
+    $('log').hidden = !n;
+    if (!n) {
+      host.appendChild(el('p', { class: 'chart-empty', text: 'The timeline starts after the first run.' }));
+      return;
+    }
+    var W = Math.max(280, Math.round(host.clientWidth || 640));
+    var L = 6, R = 44, plotW = W - L - R;
+    var Y = { l1: 14, dots: 50, l2: 98, barTop: 124, barBase: 172, l3: 200, lineTop: 222, lineBase: 264, tick: 284 };
+    var H = 294;
+    var t0 = runs[0].at, t1 = runs[n - 1].at;
+    var pad = Math.max((t1 - t0) * 0.06, 6 * HOUR);
+    var d0 = t0 - pad, d1 = t1 + pad;
+    function x(t) { return L + (t - d0) / (d1 - d0) * plotW; }
+    var xs = runs.map(function (r) { return x(r.at); });
+    var minGap = plotW;
+    for (var i = 1; i < n; i++) minGap = Math.min(minGap, xs[i] - xs[i - 1]);
+    var maxNew = Math.max(1, Math.max.apply(null, runs.map(function (r) { return r.newShown; })));
+    var maxTot = Math.max(1, Math.max.apply(null, runs.map(function (r) { return r.total; })));
+
+    var svg = sv('svg', { width: W, height: H, viewBox: '0 0 ' + W + ' ' + H, role: 'group', 'aria-label': 'Timeline of runs. Use Tab to move from run to run.' });
+    var band = sv('rect', { class: 'band', x: 0, y: Y.l1 + 6, width: 0, height: Y.lineBase - Y.l1 - 2 });
+    svg.appendChild(band);
+
+    var tk = makeTicks(d0, d1, Math.max(2, Math.floor(plotW / 80)));
+    tk.list.forEach(function (t) {
+      var xx = x(t);
+      svg.appendChild(sv('line', { class: 'gridline', x1: r1(xx), x2: r1(xx), y1: Y.l1 + 8, y2: Y.lineBase }));
+      var anchor = xx < 24 ? 'start' : (xx > W - 24 ? 'end' : 'middle');
+      svg.appendChild(sv('text', { class: 'axis-label', x: r1(xx), y: Y.tick, 'text-anchor': anchor }, tickLabel(t, tk.step)));
+    });
+
+    svg.appendChild(sv('text', { class: 'lane-label', x: L, y: Y.l1 }, 'When it ran'));
+    svg.appendChild(sv('text', { class: 'lane-label', x: L, y: Y.l2 }, 'New roles per run'));
+    svg.appendChild(sv('text', { class: 'lane-label', x: L, y: Y.l3 }, 'Roles tracked'));
+    svg.appendChild(sv('line', { class: 'baseline', x1: L, x2: L + plotW, y1: Y.dots, y2: Y.dots }));
+    svg.appendChild(sv('line', { class: 'baseline', x1: L, x2: L + plotW, y1: Y.barBase, y2: Y.barBase }));
+    svg.appendChild(sv('line', { class: 'baseline', x1: L, x2: L + plotW, y1: Y.lineBase, y2: Y.lineBase }));
+
+    var radii = runs.map(function (r) { return 4 + 9 * Math.sqrt(r.newShown / maxNew); });
+    runs.map(function (r, k) { return k; })
+      .sort(function (a, b) { return radii[b] - radii[a]; })
+      .forEach(function (k) {
+        var cx = r1(xs[k]), rr = radii[k];
+        svg.appendChild(sv('circle', { class: 'ring', cx: cx, cy: Y.dots, r: r1(rr + 2) }));
+        svg.appendChild(sv('circle', { class: runs[k].emailed === false ? 'dot hollow' : 'dot', cx: cx, cy: Y.dots, r: r1(runs[k].emailed === false ? rr - 1 : rr) }));
+      });
+    svg.appendChild(sv('text', { class: 'val-label', x: r1(xs[n - 1]), y: r1(Y.dots - radii[n - 1] - 7), 'text-anchor': 'middle' }, 'Latest'));
+
+    var bw = Math.max(3, Math.min(22, minGap * 0.55));
+    var maxIdx = 0;
+    runs.forEach(function (r, k) { if (r.newShown > runs[maxIdx].newShown) maxIdx = k; });
+    runs.forEach(function (r, k) {
+      var h = r.newShown / maxNew * (Y.barBase - Y.barTop);
+      if (h > 0) svg.appendChild(sv('path', { class: 'bar', d: barPath(xs[k] - bw / 2, xs[k] + bw / 2, Y.barBase - h, Y.barBase) }));
+      if (k === n - 1 || (k === maxIdx && r.newShown > 0)) {
+        svg.appendChild(sv('text', { class: 'val-label', x: r1(xs[k]), y: r1(Y.barBase - h - 5), 'text-anchor': 'middle' }, r.newShown));
+      }
+    });
+
+    function yTot(v) { return Y.lineBase - v / maxTot * (Y.lineBase - Y.lineTop); }
+    if (n > 1) {
+      var d = runs.map(function (r, k) { return (k ? 'L' : 'M') + r1(xs[k]) + ',' + r1(yTot(r.total)); }).join('');
+      svg.appendChild(sv('path', { class: 'tline', d: d }));
+    }
+    runs.forEach(function (r, k) {
+      svg.appendChild(sv('circle', { class: 'tdot', cx: r1(xs[k]), cy: r1(yTot(r.total)), r: 4 }));
+    });
+    svg.appendChild(sv('text', { class: 'val-label', x: r1(xs[n - 1] + 9), y: r1(yTot(runs[n - 1].total) + 4), 'text-anchor': 'start' }, runs[n - 1].total));
+
+    var cols = [];
+    runs.forEach(function (r, k) {
+      var left = k === 0 ? Math.max(0, xs[0] - Math.min(40, n > 1 ? (xs[1] - xs[0]) / 2 : 40)) : (xs[k - 1] + xs[k]) / 2;
+      var right = k === n - 1 ? Math.min(W, xs[k] + Math.min(40, n > 1 ? (xs[k] - xs[k - 1]) / 2 : 40)) : (xs[k] + xs[k + 1]) / 2;
+      cols.push([left, right]);
+      var hit = sv('rect', {
+        class: 'hit', x: r1(left), y: Y.l1 + 6, width: r1(Math.max(1, right - left)), height: Y.lineBase - Y.l1 - 2,
+        tabindex: 0, role: 'img', 'aria-label': runSummary(r)
+      });
+      hit.addEventListener('mouseenter', function () { showTip(k); });
+      hit.addEventListener('focus', function () { showTip(k); });
+      hit.addEventListener('click', function () { showTip(k); });
+      hit.addEventListener('mouseleave', hideTip);
+      hit.addEventListener('blur', hideTip);
+      svg.appendChild(hit);
+    });
+
+    host.appendChild(svg);
+    chartGeo = { W: W, xs: xs, cols: cols, band: band, bw: bw, tipTop: Y.l2 - 14 };
+  }
+
+  function showTip(i) {
+    var g = chartGeo, r = state.runs[i];
+    if (!g || !r) return;
+    var tip = $('tip');
+    clear(tip);
+    tip.appendChild(el('strong', { text: fmtRun(r.at) }));
+    [
+      ['Found', r.found != null ? plural(r.found, 'post', 'posts') : 'not recorded'],
+      ['New', plural(r.newShown, 'role', 'roles')],
+      ['Tracked', plural(r.total, 'role', 'roles')],
+      ['Email sent', emailText(r.emailed)]
+    ].forEach(function (row) {
+      tip.appendChild(el('span', { class: 'tip-row' }, [el('span', { text: row[0] }), el('span', { text: row[1] })]));
+    });
+    if (r.note) tip.appendChild(el('span', { class: 'tip-note', text: r.note }));
+    tip.hidden = false;
+    var w = tip.offsetWidth, cx = g.xs[i], left = cx + 18;
+    if (left + w > g.W) left = cx - 18 - w;
+    left = Math.max(0, Math.min(left, g.W - w));
+    tip.style.left = Math.round(left) + 'px';
+    tip.style.top = g.tipTop + 'px';
+    var c = g.cols[i], bandW = Math.min(c[1] - c[0], Math.max(g.bw + 16, 26));
+    g.band.setAttribute('x', r1(cx - bandW / 2));
+    g.band.setAttribute('width', r1(bandW));
+    g.band.style.visibility = 'visible';
+  }
+
+  function hideTip() {
+    $('tip').hidden = true;
+    if (chartGeo) chartGeo.band.style.visibility = 'hidden';
+  }
+
+  function renderLog() {
+    var body = $('logBody'), n = state.runs.length;
+    clear(body);
+    $('logSummary').textContent = 'Run log: ' + plural(n, 'run', 'runs') + ', newest first';
+    state.runs.slice().reverse().forEach(function (r) {
+      var list = el('ul', { class: 'checked-list' });
+      r.checked.forEach(function (c) {
+        if (!c || typeof c !== 'object') return;
+        var q = str(c.query), k = num(c.results);
+        list.appendChild(el('li', { text: (str(c.source) || 'Source not named') + (q ? ': “' + q + '”' : '') + (k != null ? ' (' + k + ')' : '') }));
+      });
+      if (!list.firstChild) list.appendChild(el('li', { text: 'Not recorded' }));
+      body.appendChild(el('tr', null, [
+        el('td', { class: 'when', text: fmtRun(r.at) }),
+        el('td', null, [list]),
+        el('td', { class: 'num', text: r.found != null ? r.found : '–' }),
+        el('td', { class: 'num', text: r.newShown }),
+        el('td', { text: emailText(r.emailed) }),
+        el('td', { text: r.note || '' })
+      ]));
+    });
+  }
+
+  function options(key) {
+    var base = key === 'track' ? TRACKS : (key === 'source' ? SOURCES : LEVELS);
+    var extra = [];
+    state.jobs.forEach(function (j) {
+      var v = j[key];
+      if (v && base.indexOf(v) < 0 && extra.indexOf(v) < 0) extra.push(v);
+    });
+    return ['All'].concat(base, extra.sort());
+  }
+
+  function renderChips() {
+    [['track', 'chipsTrack'], ['source', 'chipsSource'], ['level', 'chipsLevel']].forEach(function (g) {
+      var key = g[0], host = $(g[1]);
+      clear(host);
+      options(key).forEach(function (opt) {
+        var b = el('button', { type: 'button', class: 'chip', 'aria-pressed': String(state.f[key] === opt), 'data-value': opt, text: opt });
+        b.addEventListener('click', function () {
+          state.f[key] = opt;
+          syncChips();
+          renderJobs();
+        });
+        host.appendChild(b);
+      });
+    });
+  }
+
+  function syncChips() {
+    [['track', 'chipsTrack'], ['source', 'chipsSource'], ['level', 'chipsLevel']].forEach(function (g) {
+      Array.prototype.forEach.call($(g[1]).children, function (b) {
+        b.setAttribute('aria-pressed', String(b.getAttribute('data-value') === state.f[g[0]]));
+      });
+    });
+  }
+
+  function matches(j) {
+    var f = state.f;
+    if (f.track !== 'All' && j.track !== f.track) return false;
+    if (f.source !== 'All' && j.source !== f.source) return false;
+    if (f.level !== 'All' && j.level !== f.level) return false;
+    if (f.newOnly && !j.isNew) return false;
+    if (f.q) {
+      var hay = (j.title + ' ' + j.company).toLowerCase();
+      var terms = f.q.toLowerCase().split(/\s+/);
+      for (var i = 0; i < terms.length; i++) if (terms[i] && hay.indexOf(terms[i]) < 0) return false;
+    }
+    return true;
+  }
+
+  function byNewest(a, b) { return ((b.first || 0) - (a.first || 0)) || a.title.localeCompare(b.title); }
+  function byCompany(a, b) { return a.company.localeCompare(b.company, 'en', { sensitivity: 'base' }) || byNewest(a, b); }
+
+  function jobCard(j, arriving) {
+    var card = el('article', { class: 'job' + (arriving ? ' arrive' : '') });
+    if (j.isNew) card.appendChild(el('span', { class: 'badge-new', text: 'NEW' }));
+    var h = el('h3');
+    if (j.url) {
+      h.appendChild(el('a', { href: j.url, target: '_blank', rel: 'noopener noreferrer' }, [j.title, el('span', { class: 'vh', text: ' (opens in a new tab)' })]));
+    } else {
+      h.appendChild(document.createTextNode(j.title));
+    }
+    card.appendChild(h);
+    card.appendChild(el('p', { class: 'company', text: j.company }));
+    var where = [j.location, j.posted ? 'Posted ' + fmtPosted(j.posted) : ''].filter(Boolean).join(' · ');
+    if (where) card.appendChild(el('p', { class: 'where', text: where }));
+    if (j.salary) card.appendChild(el('p', { class: 'salary', text: j.salary }));
+    if (!j.url) card.appendChild(el('p', { class: 'nolink', text: 'There is no link because the post address is missing or is not a web address.' }));
+    var tags = el('ul', { class: 'tags', 'aria-label': 'Source, track and level' });
+    tags.appendChild(el('li', { class: 'tag tag-src', text: j.source }));
+    if (j.track) tags.appendChild(el('li', { class: 'tag', text: j.track }));
+    tags.appendChild(el('li', { class: 'tag', text: j.level === 'Not stated' ? 'Level not stated' : j.level + ' level' }));
+    card.appendChild(tags);
+    if (j.why) card.appendChild(el('p', { class: 'why', text: j.why }));
+    var seen = j.seenRuns ? 'Seen in ' + plural(j.seenRuns, 'run', 'runs') : 'Not matched to a run yet';
+    if (j.first != null) seen += ' · first seen ' + fmtDate(j.first, false);
+    card.appendChild(el('p', { class: 'seen', text: seen }));
+    return card;
+  }
+
+  function resetFilters() {
+    state.f = { track: 'All', source: 'All', level: 'All', q: '', newOnly: false, sort: state.f.sort };
+    $('q').value = '';
+    $('newOnly').checked = false;
+    syncChips();
+    renderJobs();
+  }
+
+  function renderJobs() {
+    var grid = $('grid'), none = $('noMatch'), total = state.jobs.length;
+    clear(grid);
+    clear(none);
+    $('roles').hidden = !total && !state.runs.length;
+    $('filters').hidden = !total;
+    var list = state.jobs.filter(matches).sort(state.f.sort === 'company' ? byCompany : byNewest);
+    $('count').textContent = total ? 'Showing ' + list.length + ' of ' + total : '';
+    var arriving = state.arriving;
+    list.forEach(function (j) { grid.appendChild(jobCard(j, arriving && arriving.has(j.id))); });
+    if (!total) {
+      none.appendChild(el('p', { class: 'no-match', text: 'The routine has run, but no roles are on the list yet.' }));
+    } else if (!list.length) {
+      var btn = el('button', { type: 'button', class: 'btn', text: 'Clear filters' });
+      btn.addEventListener('click', resetFilters);
+      none.appendChild(el('p', { class: 'no-match' }, ['No roles match these filters.', btn]));
+    }
+  }
+
+  function renderCard() {
+    var dl = $('card');
+    clear(dl);
+    CARD_ROWS.forEach(function (row) {
+      var v = state.meta.card[row[1]];
+      dl.appendChild(el('dt', { class: 'smallcaps', text: row[0] }));
+      dl.appendChild(el('dd', { class: v ? null : 'unset', text: v || 'Not set yet' }));
+    });
+  }
+
+  function renderAll() {
+    renderMasthead();
+    renderStatus();
+    renderStats();
+    renderChart();
+    renderLog();
+    renderChips();
+    renderJobs();
+    renderCard();
+  }
+
+  function apply(data, arriving) {
+    state.meta = data.meta;
+    state.jobs = data.jobs;
+    state.runs = data.runs;
+    state.signature = data.signature;
+    state.loaded = true;
+    state.error = null;
+    state.arriving = arriving;
+    derive();
+    renderAll();
+    state.arriving = null;
+  }
+
+  var toastTimer;
+  function toast(msg) {
+    var t = $('toast');
+    t.textContent = '';
+    t.classList.add('show');
+    setTimeout(function () { t.textContent = msg; }, 60);
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.classList.remove('show'); }, 7000);
+  }
+
+  function load(manual) {
+    if (state.busy) return;
+    state.busy = true;
+    var btn = $('checkBtn');
+    btn.setAttribute('aria-disabled', 'true');
+    btn.textContent = 'Checking…';
+    Promise.all([getJSON('jobs.json'), getJSON('runs.json')]).then(function (docs) {
+      var data = parseAll(docs[0], docs[1]);
+      if (!state.loaded) {
+        state.openIds = new Set(data.jobs.map(function (j) { return j.id; }));
+        apply(data, null);
+      } else if (data.signature !== state.signature) {
+        var known = new Set(state.jobs.map(function (j) { return j.id; }));
+        var arriving = new Set(data.jobs.filter(function (j) { return !known.has(j.id); }).map(function (j) { return j.id; }));
+        var prevCount = state.runs.length;
+        var prevLatest = prevCount ? state.runs[prevCount - 1].at : null;
+        apply(data, arriving);
+        var nowLatest = data.runs.length ? data.runs[data.runs.length - 1].at : null;
+        var moreRuns = data.runs.length > prevCount || nowLatest !== prevLatest;
+        if (arriving.size || moreRuns) {
+          var since = data.jobs.filter(function (j) { return !state.openIds.has(j.id); }).length;
+          toast(since ? plural(since, 'new role', 'new roles') + ' since you opened this page' : 'A new run has finished, but no roles have been added since you opened this page.');
+        } else if (manual) {
+          toast('The data files changed, but there are no new roles.');
+        }
+      } else if (manual) {
+        toast('Checked at ' + fmtClock(Date.now()) + '. There is nothing new yet.');
+      }
+      state.lastChecked = Date.now();
+      $('checked').textContent = 'Page checked ' + fmtClock(state.lastChecked);
+    }).catch(function (err) {
+      if (!state.loaded) {
+        state.error = err;
+        renderStatus();
+        $('lastRun').textContent = 'Last run: unknown';
+        $('watch').classList.add('overdue');
+        $('watchText').textContent = 'Not loaded';
+      } else {
+        toast('This page could not check for new data. ' + (err && err.message ? err.message : ''));
+      }
+    }).then(function () {
+      state.busy = false;
+      btn.removeAttribute('aria-disabled');
+      btn.textContent = 'Check again';
+    });
+  }
+
+  function wire() {
+    $('checkBtn').addEventListener('click', function () { load(true); });
+    $('q').addEventListener('input', debounce(function () { state.f.q = $('q').value.trim(); renderJobs(); }, 150));
+    $('newOnly').addEventListener('change', function () { state.f.newOnly = $('newOnly').checked; renderJobs(); });
+    $('sort').addEventListener('change', function () { state.f.sort = $('sort').value; renderJobs(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hideTip(); });
+    var lastW = 0;
+    window.addEventListener('resize', debounce(function () {
+      var w = $('chart').clientWidth;
+      if (state.loaded && w && w !== lastW) { lastW = w; renderChart(); }
+    }, 150));
+    setInterval(function () { if (!document.hidden) load(false); }, REFRESH_MS);
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden && Date.now() - state.lastChecked > REFRESH_MS) load(false);
+    });
+  }
+
+  if (isSample) $('sampleBanner').hidden = false;
+  wire();
+  load(false);
+})();
+</script>
+</body>
+</html>

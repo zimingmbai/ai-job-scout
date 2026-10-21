@@ -1,0 +1,72 @@
+{
+  "runs": [
+    {
+      "run_at": "2026-10-18T06:09:00+08:00",
+      "checked": [
+        { "source": "MyCareersFuture", "query": "artificial intelligence", "results": 1 },
+        { "source": "MyCareersFuture", "query": "machine learning", "results": 1 },
+        { "source": "MyCareersFuture", "query": "generative AI", "results": 0 },
+        { "source": "MyCareersFuture", "query": "innovation", "results": 2 },
+        { "source": "Company site (Greenhouse)", "query": "sample-board-a", "results": 1 },
+        { "source": "Company site (Lever)", "query": "sample-board-b", "results": 1 },
+        { "source": "LinkedIn (alert emails)", "query": "from:jobalerts-noreply@linkedin.com newer_than:3d", "results": 4 }
+      ],
+      "found": 10,
+      "new": 10,
+      "kept": 10,
+      "emailed": true,
+      "note": "First run, so all ten roles are new. Every source answered."
+    },
+    {
+      "run_at": "2026-10-19T06:08:00+08:00",
+      "checked": [
+        { "source": "MyCareersFuture", "query": "artificial intelligence", "results": 2 },
+        { "source": "MyCareersFuture", "query": "machine learning", "results": 1 },
+        { "source": "MyCareersFuture", "query": "generative AI", "results": 0 },
+        { "source": "MyCareersFuture", "query": "innovation", "results": 4 },
+        { "source": "Company site (Greenhouse)", "query": "sample-board-a", "results": 2 },
+        { "source": "Company site (Lever)", "query": "sample-board-b", "results": 1 },
+        { "source": "LinkedIn (alert emails)", "query": "from:jobalerts-noreply@linkedin.com newer_than:3d", "results": 6 }
+      ],
+      "found": 16,
+      "new": 6,
+      "kept": 16,
+      "emailed": true,
+      "note": "Six new roles. The other ten were already on the list."
+    },
+    {
+      "run_at": "2026-10-20T06:10:00+08:00",
+      "checked": [
+        { "source": "MyCareersFuture", "query": "artificial intelligence", "results": 3 },
+        { "source": "MyCareersFuture", "query": "machine learning", "results": 1 },
+        { "source": "MyCareersFuture", "query": "generative AI", "results": 1 },
+        { "source": "MyCareersFuture", "query": "innovation", "results": 4 },
+        { "source": "Company site (Greenhouse)", "query": "sample-board-a", "results": 3 },
+        { "source": "Company site (Lever)", "query": "sample-board-b", "results": 1 },
+        { "source": "LinkedIn (alert emails)", "query": "from:jobalerts-noreply@linkedin.com newer_than:3d", "results": 7 }
+      ],
+      "found": 20,
+      "new": 5,
+      "kept": 21,
+      "emailed": false,
+      "note": "Five new roles. Gmail would not send, so the email was saved as a draft."
+    },
+    {
+      "run_at": "2026-10-21T06:09:00+08:00",
+      "checked": [
+        { "source": "MyCareersFuture", "query": "artificial intelligence", "results": 3 },
+        { "source": "MyCareersFuture", "query": "machine learning", "results": 1 },
+        { "source": "MyCareersFuture", "query": "generative AI", "results": 2 },
+        { "source": "MyCareersFuture", "query": "innovation", "results": 5 },
+        { "source": "Company site (Greenhouse)", "query": "sample-board-a", "results": 2 },
+        { "source": "Company site (Lever)", "query": "sample-board-b", "results": 0 },
+        { "source": "LinkedIn (alert emails)", "query": "from:jobalerts-noreply@linkedin.com newer_than:3d", "results": 7 }
+      ],
+      "found": 20,
+      "new": 4,
+      "kept": 25,
+      "emailed": true,
+      "note": "Four new roles. The sample-board-b board returned nothing this time."
+    }
+  ]
+}
