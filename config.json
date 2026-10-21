@@ -1,0 +1,14 @@
+{
+  "owner_email": "YOUR_GMAIL_ADDRESS@gmail.com",
+  "dashboard_url": "https://YOUR_GITHUB_USERNAME.github.io/ai-job-scout/",
+  "timezone": "Asia/Singapore",
+  "mycareersfuture_terms": ["artificial intelligence", "machine learning", "generative AI", "innovation"],
+  "ai_title_words": ["AI", "artificial intelligence", "machine learning", "ML", "generative", "GenAI", "LLM", "data scientist", "deep learning", "NLP", "computer vision", "AI product", "AI governance", "prompt"],
+  "innovation_title_words": ["innovation", "digital transformation", "venture", "new business", "incubat", "design thinking", "product strategy", "emerging tech"],
+  "greenhouse_boards": ["databricks", "stripe", "anthropic"],
+  "lever_boards": ["palantir"],
+  "company_location_word": "Singapore",
+  "read_linkedin_alert_emails": true,
+  "max_roles_in_email": 15,
+  "forget_after_days": 45
+}

@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": "AI and Innovation Job Scout",
+    "focus": "AI and innovation roles in Singapore for business graduates",
+    "schedule": "Every day at 6:07 AM, Singapore time",
+    "updated_at": null,
+    "card": {
+      "job": "Find new AI and innovation job posts in Singapore each morning and list them here",
+      "trigger": "Schedule: every day at 6:07 AM, Singapore time",
+      "tools": "MyCareersFuture and company job boards (through tools/scout.py), my own LinkedIn job alert emails (Gmail connector), git",
+      "never": "Open linkedin.com, apply for a job, or email anyone but me",
+      "check": "I read the morning email and open each post before I act on it"
+    }
+  },
+  "jobs": []
+}
